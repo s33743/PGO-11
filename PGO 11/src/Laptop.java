@@ -29,6 +29,13 @@ public class Laptop extends Equipment {
 
     @Override
     public String getDisplayText() {
-        return "Laptop: " + name + " RAM: " + ramGb + "GB";
+        return String.format(
+                "Laptop [%s] %s | RAM: %d GB | Dock: %s | %.2f PLN/dzień",
+                id,
+                name,
+                ramGb,
+                dockingStation ? "TAK" : "NIE",
+                calculateDailyPrice()
+        );
     }
 }

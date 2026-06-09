@@ -30,6 +30,12 @@ public class Student {
 
     @Override
     public String toString() {
-        return id + " " + fullName + " (" + loyaltyPoints + " pkt)";
+        return String.format(
+                "[%s] %s | grupa: %s | punkty: %d",
+                id,
+                fullName,
+                group,
+                loyaltyPoints
+        );
     }
 }

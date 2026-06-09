@@ -45,11 +45,20 @@ public class Reservation implements Displayable {
 
     @Override
     public String getDisplayText() {
-        return id + " | "
-                + student.getFullName()
-                + " | "
-                + equipment.getDisplayText()
-                + " | "
-                + status;
+
+        return String.format(
+                """
+                        Rezerwacja: %s
+                        Student: %s
+                        Sprzęt: %s
+                        Dni: %d
+                        Status: %s
+                        """,
+                id,
+                student.getFullName(),
+                equipment.getDisplayText(),
+                days,
+                status
+        );
     }
 }

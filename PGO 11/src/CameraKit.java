@@ -31,6 +31,13 @@ public class CameraKit extends Equipment {
 
     @Override
     public String getDisplayText() {
-        return "CameraKit: " + name + " Obiektywy: " + lensCount;
+        return String.format(
+                "CameraKit [%s] %s | Obiektywy: %d | Statyw: %s | %.2f PLN/dzień",
+                id,
+                name,
+                lensCount,
+                hasTripod ? "TAK" : "NIE",
+                calculateDailyPrice()
+        );
     }
 }
